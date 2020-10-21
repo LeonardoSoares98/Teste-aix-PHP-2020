@@ -18,6 +18,15 @@
     </li>
     <li><a href="">Importar cursos</a></li>
 </ul>
+
+<form class="w3-container w3-card-4 w3-light-grey" action="/leonardo/listagem_alunos.php">
+    <p>
+        <label for="search">Buscar nome:</label></p>
+    <p>
+        <input class="w3-input" type="search" id="search" name="search"></p>
+    <p>
+        <input class="w3-btn w3-grey" type="submit" value="Buscar"></p>
+</form>
 <?php
 
 if (isset($_GET['pageno'])) {
@@ -34,13 +43,17 @@ if (mysqli_connect_errno()){
     echo "Failed to connect to MySQL: " . mysqli_connect_error();
     die();
 }
+$where = '';
+if(isset($_GET['search'])){
+    $where = "WHERE nom_aluno like '%" . $_GET['search'] ."%'";
+}
 
 $total_pages_sql = "SELECT COUNT(*) FROM alunos";
 $result = mysqli_query($conn,$total_pages_sql);
 $total_rows = mysqli_fetch_array($result)[0];
 $total_pages = ceil($total_rows / $no_of_records_per_page);
 
-$sql = "SELECT * FROM alunos LIMIT $offset, $no_of_records_per_page";
+$sql = "SELECT * FROM alunos " . $where . " LIMIT $offset, $no_of_records_per_page";
 $res_data = mysqli_query($conn,$sql);
 
 ?>
