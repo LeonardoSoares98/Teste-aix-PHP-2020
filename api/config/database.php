@@ -10,7 +10,7 @@ PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;*/
 
     // specify your own database credentials
-	private $host = "localhost";
+	private $host = "srvdesenv";
 	private $db_name = "teste";
 	private $username = "root";
 	private $password = "";
@@ -26,6 +26,7 @@ PRIMARY KEY (`id`)
 			$this->conn->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_OBJ);
 		} catch ( PDOException $exception ) {
 			echo "Connection error: " . $exception->getMessage ();
+			die;
 		}
 		
 		return $this->conn;

@@ -8,7 +8,7 @@
 		// Verifica o usuario
 		var username = document.getElementById("username_login").value;
 		if (username.length < 6) {
-			document.getElementById("username_login_error").innerHTML = "MÌnimo 6 caracteres.";
+			document.getElementById("username_login_error").innerHTML = "M√≠nimo 6 caracteres.";
 			return false;
 		} else {
 			document.getElementById("username_login_error").innerHTML = "";
@@ -16,7 +16,7 @@
 		// Verifica a senha
 		var password = document.getElementById("password_login").value;
 		if (password.length < 6) {
-			document.getElementById("password_login_error").innerHTML = "MÌnimo 6 caracteres.";
+			document.getElementById("password_login_error").innerHTML = "M√≠nimo 6 caracteres.";
 			return false;
 		} else {
 			document.getElementById("password_login_error").innerHTML = "";
@@ -27,7 +27,7 @@
 		// Verifica o usuario
 		var username = document.getElementById("username_signup").value;
 		if (username.length < 6) {
-			document.getElementById("username_signup_error").innerHTML = "MÌnimo 6 caracteres.";
+			document.getElementById("username_signup_error").innerHTML = "M√≠nimo 6 caracteres.";
 			return false;
 		} else {
 			document.getElementById("username_signup_error").innerHTML = "";
@@ -35,17 +35,17 @@
 		// Verifica a senha
 		var password = document.getElementById("password_signup").value;
 		if (password.length < 6) {
-			document.getElementById("password_signup_error").innerHTML = "MÌnimo 6 caracteres.";
+			document.getElementById("password_signup_error").innerHTML = "M√≠nimo 6 caracteres.";
 			return false;
 		} else {
 			document.getElementById("password_signup_error").innerHTML = "";
 		}
 
-		// Verifica a confirmaÁ„o de senha
+		// Verifica a confirma√ß√£o de senha
 		var confirm_password = document
 				.getElementById("confirm_password_signup").value;
 		if (confirm_password.length < 6) {
-			document.getElementById("confirm_password_signup_error").innerHTML = "MÌnimo 6 caracteres.";
+			document.getElementById("confirm_password_signup_error").innerHTML = "M√≠nimo 6 caracteres.";
 			return false;
 		} else {
 			document.getElementById("confirm_password_signup_error").innerHTML = "";
@@ -53,7 +53,7 @@
 
 		// Verifica coincidencia das senhas
 		if (confirm_password != password) {
-			document.getElementById("confirm_password_signup_error").innerHTML = "As senhas n„o se coincidem.";
+			document.getElementById("confirm_password_signup_error").innerHTML = "As senhas nÔøΩo se coincidem.";
 			return false;
 		} else {
 			document.getElementById("confirm_password_signup_error").innerHTML = "";
@@ -103,7 +103,7 @@ if (isset($_POST['button']) && $_POST['button']==='Cadastrar'){
 	} else {
 		$user_arr = array (
 				"status" => false,
-				"message" => "Usu·rio j· existe!"
+				"message" => "Usu√°rio j√° existe!"
 		);
 	}
 	var_dump($user_arr);
@@ -124,11 +124,11 @@ if (isset($_POST['button']) && $_POST['button']==='Cadastrar'){
 				"id" => $row ['id'],
 				"username" => $row ['username']
 		);
-        header('Location: http://loginscreen/index2.php');
+        header('Location: http://192.168.0.111/leonardo/listagem_alunos.php');
 	} else {
 		$user_arr = array (
 				"status" => false,
-				"message" => "Usu·rio ou senha inv·lidos!"
+				"message" => "Usu√°rio ou senha inv√°lidos!"
 		);
 	}
 	var_dump($user_arr);
@@ -147,7 +147,7 @@ if (isset($_POST['button']) && $_POST['button']==='Cadastrar'){
 				<form class="sign-in-htm" action="index.php"
 					onsubmit="return validateLogin()" method="POST">
 					<div class="group">
-						<label for="user" class="label"><?php echo utf8_encode("Usu·rio") ?></label> <input
+						<label for="user" class="label">Usu√°rio</label> <input
 							id="username_login" name="username" type="text" class="input"
 							required maxlength="25"> <span id="username_login_error"
 							class="error"></span>
@@ -178,7 +178,7 @@ if (isset($_POST['button']) && $_POST['button']==='Cadastrar'){
 				<form class="sign-up-htm" action="index.php"
 					onsubmit="return validateSignUp()" method="POST">
 					<div class="group">
-						<label for="user" class="label"><?php echo utf8_encode("Usu·rio") ?></label> <input
+						<label for="user" class="label">Usu√°rio</label> <input
 							id="username_signup" name="username" type="text" class="input"
 							required maxlength="25"> <span id="username_signup_error"
 							class="error"></span>
@@ -205,7 +205,7 @@ if (isset($_POST['button']) && $_POST['button']==='Cadastrar'){
 
 					<div class="hr"></div>
 					<div class="foot-lnk">
-						<label for="tab-1"><?php echo utf8_encode("J· possui conta?") ?></label>
+						<label for="tab-1">J√° possui conta?</label>
 					</div>
 				</form>
 			</div>
